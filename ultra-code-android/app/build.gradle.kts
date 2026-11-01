@@ -4,10 +4,10 @@ plugins {
     id("org.jetbrains.kotlin.plugin.compose")
 }
 android {
-    namespace = "ai.ultracode.ultimate"
+    namespace = "com.ultracode.ultimate"
     compileSdk = 35
     defaultConfig {
-        applicationId = "ai.ultracode.ultimate"
+        applicationId = "com.ultracode.ultimate"
         minSdk = 26
         targetSdk = 35
         versionCode = 1
