@@ -39,7 +39,7 @@ fun BuilderMainScreen(
 ) {
     val uiState by viewModel.uiState.collectAsState()
     val savedProjects by viewModel.allSavedProjects.collectAsState()
-    var selectedNavTab by remember { mutableStateOf(0) } // 0: Architect, 1: Code, 2: Runner, 3: Diag, 4: Projects
+    var selectedNavTab by remember { mutableStateOf(0) } // 0: Architect, 1: Code, 2: Runner, 3: Audit, 4: Projects, 5: Settings
     var userInputText by remember { mutableStateOf("") }
     val chatListState = rememberLazyListState()
 
@@ -70,7 +70,7 @@ fun BuilderMainScreen(
                         )
                         Column {
                             Text(
-                                text = "CODE BUILD AI",
+                                text = "ULTRA CODE ULTIMATE",
                                 fontSize = 14.sp,
                                 fontWeight = FontWeight.Black,
                                 color = Color.White,
@@ -86,7 +86,7 @@ fun BuilderMainScreen(
                     }
                 },
                 actions = {
-                    // AI Status Badge
+                    IconButton(onClick = { selectedNavTab = 5 }) {\n                        Icon(imageVector = Icons.Default.Settings, contentDescription = "AI Provider Settings", tint = Color.White)\n                    }\n                    // AI Status Badge
                     Surface(
                         shape = RoundedCornerShape(12.dp),
                         color = if (uiState.hasGeminiApiKey) Color(0x3310B981) else Color(0x336366F1),
